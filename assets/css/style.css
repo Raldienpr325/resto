@@ -91,7 +91,7 @@ input[type=password] {
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: inline-block;
-	border: 1px solid #ccc; 
+	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
 textarea {
@@ -100,12 +100,12 @@ textarea {
 	font-size: inherit;
 	line-height: inherit;
 	overflow: auto;
-  	resize: vertical;
+	resize: vertical;
 }
 
 textarea.form-control {
 	height: auto;
-  }
+}
 
 .form-control {
 	display: block;
@@ -121,9 +121,9 @@ textarea.form-control {
 	border: 1px solid #ced4da;
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+}
 
-button {
+button, input[type=submit] {
 	background-color: #4caf50;
 	color: white;
 	padding: 14px 20px;
@@ -624,17 +624,85 @@ img {
 }
 
 .entry-logo {
-    float: left;
-    width: 110px;
-    height: auto;
-    border: 1px solid #eaebeb;
-    border-radius: 2px;
-    margin-top: 15px;
-    margin-left: 15px;
-    overflow: hidden
+	float: left;
+	width: 110px;
+	height: auto;
+	border: 1px solid #eaebeb;
+	border-radius: 2px;
+	margin-top: 15px;
+	margin-left: 15px;
+	overflow: hidden;
 }
 
 .entry-logo img {
-    max-width: 100%;
-    display: block
+	max-width: 100%;
+	display: block;
+}
+
+table {
+	width: 750px;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+th {
+	background: #4caf50;
+	color: white;
+	font-weight: bold;
+}
+
+td,
+th {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
+	font-size: 14px;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+	table {
+		width: 100%;
+	}
+
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		display: block;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		content: attr(data-column);
+		color: #000;
+		font-weight: bold;
+	}
 }

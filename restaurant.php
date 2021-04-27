@@ -54,7 +54,13 @@ include_once 'product-action.php';
                 <p>TOTAL</p>
                 <h3 class="value"><strong><?php echo "Rp. ".$item_total; ?></strong></h3>
                 <p>Gratis Ongkir</p>
-                <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"><button>Checkout</button></a>
+                <?php
+                  if($item_total > 0){
+                    ?>
+                    <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"><button>Checkout</button></a>
+                    <?php
+                  }
+                ?>
               </div>
             </div>
             <div class="col-sm-9">
