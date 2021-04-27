@@ -24,7 +24,7 @@ session_start();
 												?>
                         <div class="col-lg-4">
                           <div class="card">
-                            <img src="admin/menu_img/food/<?= $r['img'] ?>" alt="">
+                            <img src="admin/menu_img/dishes/<?= $r['img'] ?>" alt="" width="100%">
                             <div class="container">
                               <h4><b><?= $r['title'] ?></b></h4> 
                               <p><?= $r['slogan'] ?></p> 
