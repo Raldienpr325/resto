@@ -11,8 +11,11 @@ if (empty($_SESSION["user_id"])) {
     $item_total += ($item["price"] * $item["quantity"]);
   }
   if ($_POST['submit']) {
-    $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item_total . "')";
-    mysqli_query($db, $SQL);
+    foreach ($_SESSION["cart_item"] as $item){
+      $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . ($item["price"] * $item["quantity"]) . "')";
+      mysqli_query($db, $SQL);
+    }
+    unset($_SESSION["cart_item"]);
     $success = "Order sukses! <p>Anda akan diarahkan ke menu pesanan dalam <span id='counter'>5</span> detik.</p>
     <script type='text/javascript'>
     function countdown() {

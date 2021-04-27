@@ -94,13 +94,6 @@ label.control-label {
   color: #777;
 }
 
-
-
-
-
-
-
-
 table { 
 	width: 650px; 
 	border-collapse: collapse; 
@@ -189,16 +182,6 @@ while($row=mysqli_fetch_array($ret2))
       <td><b>User phone:</b></td>
       <td><?php echo htmlentities($row['phone']); ?></td>
     </tr>
-     
-
-
-       
-
-
-
-
-
-      
      <tr height="50">
       <td><b>Status:</b></td>
       <td><?php if($row['status']==1)

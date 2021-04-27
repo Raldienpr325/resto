@@ -3,9 +3,9 @@
 include("../connection/connect.php");
 error_reporting(0);
 session_start();
-if(strlen($_SESSION['user_id'])==0)
-  { 
-header('location:login.php');
+if(strlen($_SESSION['adm_id']) == 0)
+{ 
+header('location:index.php');
 }
 else
 {

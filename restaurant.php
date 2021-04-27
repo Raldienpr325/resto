@@ -77,7 +77,7 @@ include_once 'product-action.php';
                         <form method="post" action='restaurant.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
                           <div class="row">
                             <div class="col-sm-3">
-                              <?php echo '<img src="admin/Res_img/dishes/'.$product['img'].'" alt="Food logo" width="100%">'; ?>
+                              <?php echo '<img src="admin/menu_img/dishes/'.$product['img'].'" alt="Food logo" width="100%">'; ?>
                             </div>
                             <div class="col-sm-6">
                               <h6><a href="#"><?php echo $product['title']; ?></a></h6>
