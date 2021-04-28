@@ -3,7 +3,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <b><img src="images/logo-2.png" alt="homepage" class="dark-logo" /></b>
-                        <span><img src="images/logo-text-2.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img src="images/logo-2.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
