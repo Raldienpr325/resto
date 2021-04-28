@@ -28,7 +28,7 @@ session_start();
                             <div class="container">
                               <h4><b><?= $r['title'] ?></b></h4> 
                               <p><?= $r['slogan'] ?></p> 
-                              <a href="food.php?res_id='.$r['rs_id'].'"><button>Rp <?= $r['price'] ?></button></a>
+                              <a href="restaurant.php?res_id=<?= $r['rs_id'] ?>"><button>Rp <?= $r['price'] ?></button></a>
                             </div>
                           </div>
                         </div>
