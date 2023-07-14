@@ -18,7 +18,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
             $extension = explode('.', $fname);
             $extension = strtolower(end($extension));
             $fnew = uniqid() . '.' . $extension;
-            $store = "Res_img/dishes/" . basename($fnew);                      // the path to store the upload image
+            $store = "menu_img/dishes/" . basename($fnew);                      // the path to store the upload image
             if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
                 if ($fsize >= 1000000) {
                     $error =     '<div class="alert alert-danger alert-dismissible fade show">
@@ -26,7 +26,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                                     <strong>Max Image Size is 1024kb!</strong> Try different Image.
                                     </div>';
                 } else {
-                    $sql = "update dishes set rs_id='".$_POST['res_name']."',title='".$_POST['d_name']."',slogan='".$_POST['about']."',price='".$_POST['price']."',img='".$fnew."' where d_id='".$_GET['menu_upd']."'";  // update the submited data ino the database :images
+                    $sql = "update menus set rs_id='".$_POST['res_name']."',title='".$_POST['d_name']."',slogan='".$_POST['about']."',price='".$_POST['price']."',img='".$fnew."' where d_id='".$_GET['menu_upd']."'";  // update the submited data ino the database :images
                     mysqli_query($db, $sql);
                     move_uploaded_file($temp, $store);
 
@@ -37,7 +37,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                 }
             }
         } else {
-            $sql = "update dishes set rs_id='".$_POST['res_name']."', title='".$_POST['d_name']."', slogan='".$_POST['about']."',price='".$_POST['price']."' where d_id='".$_GET['menu_upd']."'";  // update the submited data ino the database :images
+            $sql = "update menus set rs_id='".$_POST['res_name']."', title='".$_POST['d_name']."', slogan='".$_POST['about']."',price='".$_POST['price']."' where d_id='".$_GET['menu_upd']."'";  // update the submited data ino the database :images
             mysqli_query($db, $sql);
             $success =     '<div class="alert alert-success alert-dismissible fade show">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -88,7 +88,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                         <div class="card-body">
                             <form action='' method='post' enctype="multipart/form-data">
                                 <div class="form-body">
-                                    <?php $qml = "select * from dishes where d_id='$_GET[menu_upd]'";
+                                    <?php $qml = "select * from menus where d_id='$_GET[menu_upd]'";
                                     $rest = mysqli_query($db, $qml);
                                     $roww = mysqli_fetch_array($rest);
                                     ?>
@@ -122,7 +122,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                                             <label class="control-label">Gambar</label>
                                             <p>Pilih file lagi untuk update gambar</p>
                                             <div class="form-group has-danger">
-                                                <img src="Res_img/dishes/<?= $roww['img'] ?>" alt="">
+                                                <img src="menu_img/dishes/<?= $roww['img'] ?>" alt="">
                                                 <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
                                             </div>
                                         </div>

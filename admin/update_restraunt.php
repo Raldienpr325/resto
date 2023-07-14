@@ -18,7 +18,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
       $extension = explode('.', $fname);
       $extension = strtolower(end($extension));
       $fnew = uniqid() . '.' . $extension;
-      $store = "Res_img/" . basename($fnew);                      // the path to store the upload image
+      $store = "menu_img/" . basename($fnew);                      // the path to store the upload image
       if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
         if ($fsize >= 1000000) {
           $error =  '<div class="alert alert-danger alert-dismissible fade show">
@@ -120,7 +120,7 @@ if (isset($_POST['submit']))           //if upload btn is pressed
                     <label class="control-label">Gambar</label>
                     <p>Pilih file lagi untuk update gambar</p>
                     <div class="form-group has-danger">
-                      <img src="Res_img/<?= $row['image'] ?>" alt="">
+                      <img src="menu_img/<?= $row['image'] ?>" alt="">
                       <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
                     </div>
                   </div>
